@@ -1,5 +1,7 @@
 <?php
 
+use App\Models\Projects;
+use Illuminate\Support\Facades\Http;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -14,5 +16,24 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+	Projects::create([
+		'name' => 'Homeflow Technologies',
+		'description' => 'Empresa SaaS and Software Development'
+	]);
+
+	Projects::create([
+		'name' => 'Fire Codes',
+		'description' => 'Software Development'
+	]);
+	return view('welcome');
+});
+
+Route::get('/token', function () {
+	$response = Http::asForm()->post('http://localhost:8000/oauth/token', [
+		'grant_type' => 'client_credentials',
+		'client_id' => 'client-id',
+		'client_secret' => 'client-secret',
+	]);
+
+	return $response->json()['access_token'];
 });
