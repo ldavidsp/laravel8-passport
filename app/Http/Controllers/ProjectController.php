@@ -16,7 +16,7 @@ class ProjectController extends Controller {
    * ProjectController constructor.
    */
   public function __construct() {
-    $this->middleware('client-credentials');
+    // $this->middleware('client-credentials');
   }
 
   /**

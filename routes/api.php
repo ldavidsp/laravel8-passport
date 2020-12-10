@@ -2,8 +2,6 @@
 
 use App\Http\Controllers\Api\AuthController;
 use App\Http\Controllers\ProjectController;
-use App\Models\Projects;
-use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
 /*

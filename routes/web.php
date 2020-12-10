@@ -29,7 +29,7 @@ Route::get('/', function () {
   return view('welcome');
 });
 
-Route::get('/token', function (Request $request) {
+Route::get('/token-app', function (Request $request) {
   $response = Http::asForm()->post('http://127.0.0.1:8000/oauth/token', [
     'grant_type' => 'client_credentials',
     'client_id' => env('PASSPORT_PERSONAL_ACCESS_CLIENT_ID'),
