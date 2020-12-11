@@ -36,10 +36,8 @@ class ProjectsEvent implements ShouldBroadcast {
   /**
    * Get the channels the event should broadcast on.
    *
-   * @return string
    */
   public function broadcastOn(): string {
-    // new PrivateChannel('projects.'. $this->project->id);
     return 'projects.' . $this->eventType;
   }
 
@@ -50,6 +48,19 @@ class ProjectsEvent implements ShouldBroadcast {
    */
   public function broadcastAs(): string {
     return $this->eventType;
+  }
+
+  /**
+   * Get the data to broadcast.
+   *
+   * @return array
+   */
+  public function broadcastWith(): array {
+    return [
+      'id' => $this->project->id,
+      'name' => $this->project->name,
+      'description' => $this->project->description,
+    ];
   }
 
 }

@@ -25447,7 +25447,7 @@ __webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js");
 
 var channel = echo.channel('projects.created');
 channel.listen('.created', function (data) {
-  alert(JSON.stringify(data.project));
+  alert(JSON.stringify(data));
 });
 
 /***/ }),
