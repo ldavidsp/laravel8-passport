@@ -25445,8 +25445,8 @@ module.exports = function(module) {
 
 __webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js");
 
-var channel = pusher.subscribe('projects.created');
-channel.bind('created', function (data) {
+var channel = echo.channel('projects.created');
+channel.listen('.created', function (data) {
   alert(JSON.stringify(data.project));
 });
 
@@ -25462,8 +25462,6 @@ channel.bind('created', function (data) {
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var laravel_echo__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! laravel-echo */ "./node_modules/laravel-echo/dist/echo.js");
-/* harmony import */ var pusher_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! pusher-js */ "./node_modules/pusher-js/dist/web/pusher.js");
-/* harmony import */ var pusher_js__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(pusher_js__WEBPACK_IMPORTED_MODULE_1__);
 window._ = __webpack_require__(/*! lodash */ "./node_modules/lodash/lodash.js");
 /**
  * We'll load the axios HTTP library which allows us to easily issue requests
@@ -25480,17 +25478,17 @@ window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
  */
 
 
-
-window.channel = new laravel_echo__WEBPACK_IMPORTED_MODULE_0__["default"]({
+window.Pusher = __webpack_require__(/*! pusher-js */ "./node_modules/pusher-js/dist/web/pusher.js");
+window.echo = new laravel_echo__WEBPACK_IMPORTED_MODULE_0__["default"]({
   broadcaster: 'pusher',
   key: "b41fdca518dead3a9791",
   cluster: "us2",
   forceTLS: true
 }); // Enable pusher logging - don't include this in production
 
-window.pusher = new pusher_js__WEBPACK_IMPORTED_MODULE_1___default.a("b41fdca518dead3a9791", {
-  cluster: "us2"
-});
+/*window.pusher = new Pusher(process.env.MIX_PUSHER_APP_KEY, {
+	cluster: process.env.MIX_PUSHER_APP_CLUSTER
+});*/
 
 /***/ }),
 
