@@ -25479,11 +25479,25 @@ window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
 
 
 window.Pusher = __webpack_require__(/*! pusher-js */ "./node_modules/pusher-js/dist/web/pusher.js");
+/*window.echo = new Echo({
+	broadcaster: 'pusher',
+	key: process.env.MIX_PUSHER_APP_KEY,
+	cluster: process.env.MIX_PUSHER_APP_CLUSTER,
+	forceTLS: true
+});*/
+
+/**
+ * Laravel WebSockets.
+ * @type {Echo}
+ */
+
 window.echo = new laravel_echo__WEBPACK_IMPORTED_MODULE_0__["default"]({
   broadcaster: 'pusher',
-  key: "b41fdca518dead3a9791",
-  cluster: "us2",
-  forceTLS: true
+  key: "b41fd",
+  wsHost: window.location.hostname,
+  wsPort: 6001,
+  forceTLS: false,
+  disableStats: true
 }); // Enable pusher logging - don't include this in production
 
 /*window.pusher = new Pusher(process.env.MIX_PUSHER_APP_KEY, {
