@@ -27,3 +27,4 @@ Route::get('/v1/login', [AuthController::class, 'login'])->name('login');
 Route::prefix('v1')->middleware(['client-credentials'])->group(function () {
   Route::get('/projects', [ProjectController::class, 'index']);
 });
+

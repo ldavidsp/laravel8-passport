@@ -11,10 +11,8 @@ require('laravel-mix-artisan-serve');
  | file for the application as well as bundling up all the JS files.
  |
  */
+mix.browserSync('127.0.0.1:8000')
 mix.js('resources/js/app.js', 'public/js')
-  .postCss('resources/css/app.css', 'public/css', [
-    //
-  ]).serve({
-  host: '127.0.0.1',
-  port: '3000',
-});
+	.postCss('resources/css/app.css', 'public/css', [])
+  .serve();
+

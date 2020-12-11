@@ -33,14 +33,19 @@ Route::get('/pusher', function () {
 });
 
 Route::get('/token-app', function (Request $request) {
-	$host = $request->getSchemeAndHttpHost();
-	$client = new \GuzzleHttp\Client();
-	$response = $client->post($host.'/oauth/token', [
-		'grant_type' => 'client_credentials',
-		'client_id' => env('PASSPORT_PERSONAL_ACCESS_CLIENT_ID'),
-		'client_secret' => env('PASSPORT_PERSONAL_ACCESS_CLIENT_SECRET'),
+	$httpHost = $request->getSchemeAndHttpHost();
+	$client = new GuzzleHttp\Client;
+
+	$response = $client->post($httpHost.'/oauth/token', [
+		'form_params' => [
+			'grant_type' => 'client_credentials',
+			'client_id' => env('PASSPORT_PERSONAL_ACCESS_CLIENT_ID'),
+			'client_secret' => env('PASSPORT_PERSONAL_ACCESS_CLIENT_SECRET'),
+		],
 	]);
+
 	if ($response->getStatusCode() == 200) {
 		return $response->json();
 	}
+	return response()->json(['status' => $response->getStatusCode()]);
 });
