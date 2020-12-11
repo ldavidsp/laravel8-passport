@@ -7,6 +7,9 @@ use Illuminate\Database\Eloquent\Model;
 
 /**
  * @method static create(array $array)
+ * @property mixed id
+ * @property mixed name
+ * @property mixed description
  */
 class Projects extends Model {
 
