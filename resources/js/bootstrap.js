@@ -38,10 +38,3 @@ window.echo = new Echo({
 	forceTLS: false,
 	disableStats: true,
 });
-
-
-// Enable pusher logging - don't include this in production
-/*window.pusher = new Pusher(process.env.MIX_PUSHER_APP_KEY, {
-	cluster: process.env.MIX_PUSHER_APP_CLUSTER
-});*/
-

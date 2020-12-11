@@ -25498,11 +25498,7 @@ window.echo = new laravel_echo__WEBPACK_IMPORTED_MODULE_0__["default"]({
   wsPort: 6001,
   forceTLS: false,
   disableStats: true
-}); // Enable pusher logging - don't include this in production
-
-/*window.pusher = new Pusher(process.env.MIX_PUSHER_APP_KEY, {
-	cluster: process.env.MIX_PUSHER_APP_CLUSTER
-});*/
+});
 
 /***/ }),
 
