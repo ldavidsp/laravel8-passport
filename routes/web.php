@@ -16,7 +16,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-  Projects::create([
+  /*Projects::create([
     'name' => 'Homeflow Technologies',
     'description' => 'Empresa SaaS and Software Development',
   ]);
@@ -24,7 +24,7 @@ Route::get('/', function () {
   Projects::create([
     'name' => 'Fire Codes',
     'description' => 'Software Development',
-  ]);
+  ]);*/
   return view('welcome');
 });
 

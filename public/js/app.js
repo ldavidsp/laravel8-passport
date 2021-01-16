@@ -25461,7 +25461,7 @@ channel.listen('.created', function (data) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var laravel_echo__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! laravel-echo */ "./node_modules/laravel-echo/dist/echo.js");
+/* WEBPACK VAR INJECTION */(function(process) {/* harmony import */ var laravel_echo__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! laravel-echo */ "./node_modules/laravel-echo/dist/echo.js");
 window._ = __webpack_require__(/*! lodash */ "./node_modules/lodash/lodash.js");
 /**
  * We'll load the axios HTTP library which allows us to easily issue requests
@@ -25493,12 +25493,13 @@ window.Pusher = __webpack_require__(/*! pusher-js */ "./node_modules/pusher-js/d
 
 window.echo = new laravel_echo__WEBPACK_IMPORTED_MODULE_0__["default"]({
   broadcaster: 'pusher',
-  key: "b41fd",
+  key: process.env.MIX_PUSHER_APP_KEY,
   wsHost: window.location.hostname,
   wsPort: 6001,
   forceTLS: false,
   disableStats: true
 });
+/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./../../node_modules/process/browser.js */ "./node_modules/process/browser.js")))
 
 /***/ }),
 
@@ -25509,8 +25510,8 @@ window.echo = new laravel_echo__WEBPACK_IMPORTED_MODULE_0__["default"]({
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! /home/luis/websites/l8-passport/resources/js/app.js */"./resources/js/app.js");
-module.exports = __webpack_require__(/*! /home/luis/websites/l8-passport/resources/css/app.css */"./resources/css/app.css");
+__webpack_require__(/*! /home/luis/develop/laravel8-passport/resources/js/app.js */"./resources/js/app.js");
+module.exports = __webpack_require__(/*! /home/luis/develop/laravel8-passport/resources/css/app.css */"./resources/css/app.css");
 
 
 /***/ })
